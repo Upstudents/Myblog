@@ -19,6 +19,13 @@ namespace Projekt.Controllers
 
             return View();
         }
+        
+        public IActionResult Posts()
+        {
+            ViewData["Message"] = "all posts";
+
+            return View();
+        }
 
         public IActionResult Contact()
         {
