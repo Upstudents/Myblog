@@ -1,0 +1,8 @@
+/home/rabbit/C#/Projekt/bin/Debug/netcoreapp1.1/Projekt.deps.json
+/home/rabbit/C#/Projekt/bin/Debug/netcoreapp1.1/Projekt.runtimeconfig.json
+/home/rabbit/C#/Projekt/bin/Debug/netcoreapp1.1/Projekt.runtimeconfig.dev.json
+/home/rabbit/C#/Projekt/bin/Debug/netcoreapp1.1/Projekt.dll
+/home/rabbit/C#/Projekt/bin/Debug/netcoreapp1.1/Projekt.pdb
+/home/rabbit/C#/Projekt/obj/Debug/netcoreapp1.1/Projekt.AssemblyInfo.cs
+/home/rabbit/C#/Projekt/obj/Debug/netcoreapp1.1/Projekt.dll
+/home/rabbit/C#/Projekt/obj/Debug/netcoreapp1.1/Projekt.pdb
