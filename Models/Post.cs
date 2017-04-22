@@ -32,7 +32,7 @@ namespace Projekt.Models
 
         public Post(string Title, string Description, string Content)
         {   
-            this.Id=new Guid();
+            this.Id=Guid.NewGuid();
             this.Title=Title;
             this.Description=Description;
             this.Content=Content;
