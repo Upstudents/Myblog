@@ -29,7 +29,6 @@ namespace Projekt.Models
         public  IList<Tag> Tags
         { get; set; }
 
-
         public Post(string Title, string Description, string Content)
         {   
             this.Id=Guid.NewGuid();
