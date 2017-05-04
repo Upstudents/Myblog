@@ -28,6 +28,17 @@ namespace Projekt.Controllers
             return View();
         }
 
+        public IActionResult AddPost()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddPost(string Title)
+        {
+            return Content(Title);
+        }
+
         public IActionResult Error()
         {
             return View();

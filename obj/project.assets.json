@@ -2,6 +2,15 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.1": {
+      "FluentNHibernate/2.0.3": {
+        "type": "package",
+        "dependencies": {
+          "NHibernate": "4.0.0"
+        }
+      },
+      "Iesi.Collections/4.0.0.4000": {
+        "type": "package"
+      },
       "Libuv/1.9.1": {
         "type": "package",
         "dependencies": {
@@ -1541,6 +1550,12 @@
         },
         "runtime": {
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "NHibernate/4.0.0.4000": {
+        "type": "package",
+        "dependencies": {
+          "Iesi.Collections": "[4.0.0, 5.0.0)"
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -3564,6 +3579,29 @@
     }
   },
   "libraries": {
+    "FluentNHibernate/2.0.3": {
+      "sha512": "qlnjj/a2ClTVWLw0uESCBsmd5r+LaeNXoaUiVyeGzpXmqTs/mfcgZP+GO63xp3VTq4ydNBHKBuWMFMndW/uzOQ==",
+      "type": "package",
+      "path": "fluentnhibernate/2.0.3",
+      "files": [
+        "fluentnhibernate.2.0.3.nupkg.sha512",
+        "fluentnhibernate.nuspec",
+        "lib/net40/FluentNHibernate.XML",
+        "lib/net40/FluentNHibernate.dll",
+        "lib/net40/FluentNHibernate.pdb"
+      ]
+    },
+    "Iesi.Collections/4.0.0.4000": {
+      "sha512": "fLQKwZovMOhjte47Op+2YWLpmncQ/siA7hOdmG2eBLTFjp81s+gGkkGnDetOhBqYnmWK8g2kyx1DP9uNaJ68Ew==",
+      "type": "package",
+      "path": "iesi.collections/4.0.0.4000",
+      "files": [
+        "iesi.collections.4.0.0.4000.nupkg.sha512",
+        "iesi.collections.nuspec",
+        "lib/net40/Iesi.Collections.dll",
+        "lib/net40/Iesi.Collections.xml"
+      ]
+    },
     "Libuv/1.9.1": {
       "sha512": "6XpQXsan2h3YxWRgQHOby7Ox5hKNFyU2pXHmc34G4wwuW3qlEtrNL0rZk6dtIBhRlMi3JThITOdLCJr3HbvzVA==",
       "type": "package",
@@ -4867,6 +4905,30 @@
         "newtonsoft.json.9.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "NHibernate/4.0.0.4000": {
+      "sha512": "zHwxTNHQM+ilc6/vKuFYjmRms+Iw6wCL0LsOiR9Imu+Z1sK0MO0gmSlaeR6gTy4cUNjqPZrU8ym5KPBwTp4Ebg==",
+      "type": "package",
+      "path": "nhibernate/4.0.0.4000",
+      "files": [
+        "ConfigurationTemplates/FireBird.cfg.xml",
+        "ConfigurationTemplates/MSSQL.cfg.xml",
+        "ConfigurationTemplates/MySql.cfg.xml",
+        "ConfigurationTemplates/Oracle.cfg.xml",
+        "ConfigurationTemplates/PostgreSQL.cfg.xml",
+        "ConfigurationTemplates/SQLite.cfg.xml",
+        "ConfigurationTemplates/SybaseASE.cfg.xml",
+        "ConfigurationTemplates/SybaseSQLAnywhere.cfg.xml",
+        "NHibernate.license.txt",
+        "NHibernate.readme.html",
+        "NHibernate.releasenotes.txt",
+        "lib/net40/NHibernate.dll",
+        "lib/net40/NHibernate.xml",
+        "nhibernate-configuration.xsd",
+        "nhibernate-mapping.xsd",
+        "nhibernate.4.0.0.4000.nupkg.sha512",
+        "nhibernate.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -9638,6 +9700,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v1.1": [
+      "FluentNHibernate >= 2.0.3",
       "Microsoft.AspNetCore >= 1.1.1",
       "Microsoft.AspNetCore.Mvc >= 1.1.2",
       "Microsoft.AspNetCore.StaticFiles >= 1.1.1",
@@ -9695,6 +9758,10 @@
           "Microsoft.VisualStudio.Web.BrowserLink": {
             "target": "Package",
             "version": "1.1.0"
+          },
+          "FluentNHibernate": {
+            "target": "Package",
+            "version": "2.0.3"
           }
         }
       }

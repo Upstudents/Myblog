@@ -1,0 +1,11 @@
+﻿@model model.Models.Post
+@{
+    ViewData["Title"] = "Add Post";
+}
+<h2>@ViewData["Title"]</h2>
+
+<from action="/Home/AddPost" method="post">
+    <label for="Title">Title: </label>
+    <input type="text" name="Title" id="Title"/>
+
+</form>

@@ -1,13 +1,12 @@
-using System;
 using System.Collections.Generic;
 
 namespace Projekt.Models
 {
-    public class Tag
+    public class Category
     {
-        public Guid Id
-        { get; set; }   
-
+        public virtual int Id
+        { get; set; }
+ 
         public virtual string Name
         { get; set; }
  
@@ -21,3 +20,4 @@ namespace Projekt.Models
         { get; set; }
     }
 }
+    

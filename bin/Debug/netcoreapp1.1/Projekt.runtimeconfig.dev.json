@@ -1,7 +1,7 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\Bartosz\\.nuget\\packages"
+      "/home/rabbit/.nuget/packages"
     ]
   }
 }
