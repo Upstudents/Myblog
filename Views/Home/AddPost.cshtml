@@ -1,0 +1,66 @@
+﻿@model Projekt.Models.Post
+@{
+    ViewData["Title"] = "Add Posts";
+}
+<h2>@ViewData["Title"]</h2>
+
+@using (Html.BeginForm("AddPost", "Home"))
+
+{
+    <br />
+    <div class="editor-label">
+    <div style="float:left;">    
+        @Html.LabelFor(model => model.Title)
+    
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Title)
+        <div class="validation-form">
+        @Html.ValidationSummary()
+        </div>
+        </div>
+    </div>    
+    </div>
+    <div style="float:left;">         </div>     
+    <div class="editor-label">
+    <div style="float:left;">    
+        @Html.LabelFor(model => model.Description)
+    
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Description)
+        <div class="validation-form">
+        @Html.ValidationSummary()
+        </div>
+        </div>
+    </div>    
+    </div>
+    <div style="clear:both;"></div>
+    
+    <div class="editor-label">    
+        @Html.LabelFor(model => model.Tags)
+    <div class="editor-field">
+        @Html.TextAreaFor(model => model.Tags, new { style = "width: 300px; height: 100px;", placeholder = "Dodaj tagi.." })
+        <div class="validation-form">
+        @Html.ValidationSummary()
+        </div>
+        </div>
+    </div> 
+
+    <div class="editor-label">    
+        @Html.LabelFor(model => model.Content)
+    <div class="editor-field">
+        @Html.TextAreaFor(model => model.Content, new { style = "width: 1000px; height: 100px;", placeholder = "Dodaj treść.." })
+        <div class="validation-form">
+        @Html.ValidationSummary()
+        </div>
+        </div>
+    </div>    
+    
+
+    <br />
+    <input class="btn btn-primary" type="submit" value="Wyślij" />
+    
+    <br />
+  
+ 
+ 
+}

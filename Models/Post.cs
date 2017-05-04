@@ -1,34 +1,37 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Projekt.Models
 {
     public class Post
     {
+        
         private Guid Id
         { get; set; }
- 
+
+        [StringLength(18, ErrorMessage = "Hasło powinno zawierać przynajmniej 6, a maksymalnie 18 znaków", MinimumLength = 6)]        
         public string Title
         { get; set; }
- 
+        
         public string Description
         { get; set; }
- 
+        
         public string Content
         { get; set; }
- 
+        
         public string UrlSlug
         { get; set; }
- 
+        
         public DateTime PostedOn
         { get; set; }
- 
+        
         public DateTime Modified
         { get; set; }
  
         public  IList<Tag> Tags
         { get; set; }
-        public Post(string Title, string Description, string Content)
+        /*public Post(string Title, string Description, string Content)
         {   
             this.Id=Guid.NewGuid();
             setTitle(Title);
@@ -64,6 +67,6 @@ namespace Projekt.Models
             else
                 this.Content=_content;
         }
-
+*/
     }
 }
