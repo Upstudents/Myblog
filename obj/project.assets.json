@@ -9652,16 +9652,16 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bartosz\\OneDrive\\Public\\Myblog\\Projekt.csproj",
+      "projectUniqueName": "c:\\Users\\Bartosz\\OneDrive\\Public\\Myblog\\Projekt.csproj",
       "projectName": "Projekt",
-      "projectPath": "C:\\Users\\Bartosz\\OneDrive\\Public\\Myblog\\Projekt.csproj",
-      "outputPath": "C:\\Users\\Bartosz\\OneDrive\\Public\\Myblog\\obj\\",
+      "projectPath": "c:\\Users\\Bartosz\\OneDrive\\Public\\Myblog\\Projekt.csproj",
+      "outputPath": "c:\\Users\\Bartosz\\OneDrive\\Public\\Myblog\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
       ],
       "files": {
-        "lib/netcoreapp1.1/Projekt.dll": "C:\\Users\\Bartosz\\OneDrive\\Public\\Myblog\\bin\\placeholder\\netcoreapp1.1\\Projekt.dll"
+        "lib/netcoreapp1.1/Projekt.dll": "c:\\Users\\Bartosz\\OneDrive\\Public\\Myblog\\bin\\placeholder\\netcoreapp1.1\\Projekt.dll"
       },
       "frameworks": {
         "netcoreapp1.1": {
