@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Projekt.Models;
 
 namespace Projekt.Controllers
 {
@@ -28,15 +29,15 @@ namespace Projekt.Controllers
             return View();
         }
 
-        public IActionResult AddPost()
+        public IActionResult ShowPost(Post post)
         {
-            return View();
+            return View(post);
         }
 
         [HttpPost]
-        public IActionResult AddPost(string Title)
+        public IActionResult AddPost(Post post)
         {
-            return Content(Title);
+            return RedirectToAction("ShowPost",post);
         }
 
         public IActionResult Error()

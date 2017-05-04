@@ -5,6 +5,7 @@ namespace Projekt.Models
 {
     public class Post
     {
+        
         private Guid Id
         { get; set; }
  

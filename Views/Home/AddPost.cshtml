@@ -1,11 +1,25 @@
-﻿@model model.Models.Post
+﻿@model Projekt.Models.User
+    
+    @* powyżej wskazujemy na klasę w modelu z której będziemy korzystać - tzw. widok silnie typowany*@
 @{
-    ViewData["Title"] = "Add Post";
+    ViewBag.Title = "Formularz rejestracyjny";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>@ViewData["Title"]</h2>
+ 
+<h2>@ViewBag.Title</h2>
+ 
+@using (Html.BeginForm("AddPost", "Home"))  @*Korzystamy z helpera BeginForm - wkazujemy na akcję w kotrolerze do ktrorej bedziemy postować dane*@
+{
 
-<from action="/Home/AddPost" method="post">
-    <label for="Title">Title: </label>
-    <input type="text" name="Title" id="Title"/>
+    <br />
+    @Html.EditorForModel() @*Html Helpre odpwiedzialny za stworzenie formularza z widoku*@
+ 
+    <br />
+    <input class="btn btn-primary" type="submit" value="Wyślij" />
+    <br />
+    <div class="validation-form">
 
-</form>
+    </div>
+ 
+ 
+}
