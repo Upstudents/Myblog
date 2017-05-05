@@ -10,13 +10,15 @@ namespace Projekt.Models
         private Guid Id
         { get; set; }
 
-        [StringLength(18, ErrorMessage = "Hasło powinno zawierać przynajmniej 6, a maksymalnie 18 znaków", MinimumLength = 6)]        
+        [Required(ErrorMessage = "Musisz wprowadzić tytuł")]
+        [StringLength(18, ErrorMessage = "Tytuł powinno zawierać przynajmniej 3, a maksymalnie 18 znaków", MinimumLength = 3)]        
         public string Title
         { get; set; }
         
         public string Description
         { get; set; }
         
+        [Required(ErrorMessage = "Musisz wprowadzić treść")]
         public string Content
         { get; set; }
         
