@@ -1,19 +1,20 @@
 @model Projekt.Models.User
     
-    @* powyżej wskazujemy na klasę w modelu z której będziemy korzystać - tzw. widok silnie typowany*@
 @{
     ViewBag.Title = "Formularz rejestracyjny";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
- 
 <h2>@ViewBag.Title</h2>
  
 @using (Html.BeginForm("AddUser", "Home"))  @*Korzystamy z helpera BeginForm - wkazujemy na akcję w kotrolerze do ktrorej bedziemy postować dane*@
 {
-    @Html.AntiForgeryToken()
-    <br />
-    @Html.EditorForModel() @*Html Helpre odpwiedzialny za stworzenie formularza z widoku*@
+    <div class="editor-label">
+        <div style="float:left;">    
+            @Html.LabelFor(model => model.login)
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.login)
+            </div>
+        </div>    
+    </div>
  
     <br />
     <input class="btn btn-primary" type="submit" value="Wyślij" />

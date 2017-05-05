@@ -50,37 +50,37 @@ namespace Projekt.Controllers
           
         }       
 
-        [ValidateAntiForgeryToken]
-        [HttpPost] //oczekujemy żądania typy post - do tej akcji nie dostaniemy się wpisując odpowiednio jej nazwę w adresie przegladarki
         
-        public ActionResult AddUser(User user)//w argumetach funckji znajduje się odpowiednia klasa z modelu
+        [HttpGet] //oczekujemy żądania typy post - do tej akcji nie dostaniemy się wpisując odpowiednio jej nazwę w adresie przegladarki
+        public ActionResult AddUser()//w argumetach funckji znajduje się odpowiednia klasa z modelu
         {
+            return View();
             
-            // walidacja - odwolujemy sie do poszczegolnych wlasciwosci funckji
-            if (user.NIP.ToString().Length!=9)
-                ModelState.AddModelError("NIP", "NIP powienien zawierać 9 liczb"); // ustawiamy tekst bledu jaki ma sie pojawic jak i nazwe zmiennej ktrorej ma dotyczyc
- 
-            if (user.Password!=user.ConfirmPassword)
+        }
+        [HttpPost]
+        public ActionResult AddUser(User user) // akcja  do ktorej uzytkownik zostanie przekierowany po prawidlowym wypelnieniu formularza
+        {
+             if (user.Password!=user.ConfirmPassword)
                 ModelState.AddModelError("ConfirmPassword", "Hasła powinny być identyczne");
+            
  
             if (!ModelState.IsValid) // jezeli wystapil blad, zwracamy aktualna  strone do ktorej przekazujemy obiekt klasy, dzieki temu, uzupelnione przez nas pola nie zostana skasowane - po zaistnialym bledzie
-                return View("Index", user);
+                return View("AddUser", user);
             else
             {
                 // Kod zapisujący lub wysyłający pytanie do właściciela strony
  
                 return RedirectToAction("UserAdded",user); // jeszeli wszystko jest ok zwracamy widok i przekazujemy do niego obiekt
             }
+         
             
         }
- 
-        public ActionResult UserAdded(User user) // akcja  do ktorej uzytkownik zostanie przekierowany po prawidlowym wypelnieniu formularza
+
+        public IActionResult UserAdded(User user)
         {
-          
-            
-            
             return View(user);
         }
+
         public IActionResult Error()
         {
             return View();
