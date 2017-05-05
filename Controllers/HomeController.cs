@@ -37,6 +37,7 @@ namespace Projekt.Controllers
         [HttpGet]
           public IActionResult AddPost()
         {  
+          //Post post = new Post("tytul", "opis", "tag", "tresc");
           return View();
         }   
         
@@ -46,28 +47,36 @@ namespace Projekt.Controllers
             if (!ModelState.IsValid)
                 return View("AddPost", post);
             else
+            {
+                post.PostedOn = DateTime.Now;
+                post.Id = Guid.NewGuid();
+                
                 return RedirectToAction("ShowPost", post);  
-          
+            }
         }       
 
         
         [HttpGet] //oczekujemy żądania typy post - do tej akcji nie dostaniemy się wpisując odpowiednio jej nazwę w adresie przegladarki
-        public ActionResult AddUser()//w argumetach funckji znajduje się odpowiednia klasa z modelu
+        public IActionResult AddUser()//w argumetach funckji znajduje się odpowiednia klasa z modelu
         {
             return View();
             
         }
+
         [HttpPost]
-        public ActionResult AddUser(User user) // akcja  do ktorej uzytkownik zostanie przekierowany po prawidlowym wypelnieniu formularza
+        public IActionResult AddUser(User user) // akcja  do ktorej uzytkownik zostanie przekierowany po prawidlowym wypelnieniu formularza
         {
+            
              if (user.Password!=user.ConfirmPassword)
                 ModelState.AddModelError("ConfirmPassword", "Hasła powinny być identyczne");
             
- 
             if (!ModelState.IsValid) // jezeli wystapil blad, zwracamy aktualna  strone do ktorej przekazujemy obiekt klasy, dzieki temu, uzupelnione przez nas pola nie zostana skasowane - po zaistnialym bledzie
                 return View("AddUser", user);
             else
             {
+                Encrypter encrypter = new Encrypter();
+                var passwd = encrypter.GetHash(user.Password,user.Salt=encrypter.GetSalt("1dojutrek"));
+                var passwd2 = encrypter.GetHash(user.Password,user.Salt);
                 // Kod zapisujący lub wysyłający pytanie do właściciela strony
  
                 return RedirectToAction("UserAdded",user); // jeszeli wszystko jest ok zwracamy widok i przekazujemy do niego obiekt

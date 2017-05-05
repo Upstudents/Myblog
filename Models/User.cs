@@ -4,12 +4,12 @@ namespace Projekt.Models
 {
     public class User
     {
-        [ScaffoldColumn(false)] // ta właściwość nie zostanie wyświetlona w formularzu
+        //[ScaffoldColumn(false)] // ta właściwość nie zostanie wyświetlona w formularzu
         public int userID { get; set; }
- 
+        
         
         [Required(ErrorMessage = "Musisz wprowadzić login")] // prosta walidacja - użytkownik będzie zmuszony do wpisania wartości w polu - wartość jest wymagana, uzupelniamy rowniez tekst bledu jaki ma sie pojawic w przypadku pozostawionego pustego pola
-        public string login { get; set; }
+        public string Login { get; set; }
  
        
         [Required(ErrorMessage = "Musisz wprowadzić adres e-mail")]
@@ -25,6 +25,7 @@ namespace Projekt.Models
         [Required(ErrorMessage = "Musisz wprowadzić powtórzone hasło")]
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
- 
+        
+        public string Salt { get; set; }
      }
 }

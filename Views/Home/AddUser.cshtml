@@ -5,23 +5,37 @@
 }
 <h2>@ViewBag.Title</h2>
  
-@using (Html.BeginForm("AddUser", "Home"))  @*Korzystamy z helpera BeginForm - wkazujemy na akcję w kotrolerze do ktrorej bedziemy postować dane*@
+@using (Html.BeginForm("AddUser", "Home"))
 {
     <div class="editor-label">
-        <div style="float:left;">    
-            @Html.LabelFor(model => model.login)
+            @Html.LabelFor(model => model.Login)
             <div class="editor-field">
-                @Html.TextBoxFor(model => model.login)
-            </div>
-        </div>    
+                @Html.TextBoxFor(model => model.Login)
+            </div>    
     </div>
- 
-    <br />
-    <input class="btn btn-primary" type="submit" value="Wyślij" />
-    <br />
+    <div class="editor-label">    
+            @Html.LabelFor(model => model.EMail)
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.EMail)
+            </div>    
+    </div>
+    <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+            <div class="editor-field">
+                @Html.PasswordFor(model => model.Password)
+            </div>    
+    </div>
+    <div class="editor-label">
+            @Html.LabelFor(model => model.ConfirmPassword)
+            <div class="editor-field">
+                @Html.PasswordFor(model => model.ConfirmPassword)
+            </div>    
+    </div>
     <div class="validation-form">
         @Html.ValidationSummary()
     </div>
- 
- 
+    <br />
+    <input class="btn btn-primary" type="submit" value="Wyślij" />
+    <br />
+    
 }

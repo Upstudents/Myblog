@@ -7,7 +7,7 @@ namespace Projekt.Models
     public class Post
     {
         
-        private Guid Id
+        public Guid Id
         { get; set; }
 
         [Required(ErrorMessage = "Musisz wprowadzić tytuł")]
@@ -33,14 +33,15 @@ namespace Projekt.Models
  
         public  IList<Tag> Tags
         { get; set; }
-        /*public Post(string Title, string Description, string Content)
+        /*public Post(string Title, string Description, string tag, string Content)
         {   
             this.Id=Guid.NewGuid();
-            setTitle(Title);
-            setDescription(Description);
-            setContent(Content);
+            this.Title=Title;
+            this.Description=Description;
+            this.Tags.Add(new Tag(tag));
+            this.Content=Content;
             this.PostedOn=DateTime.Now;
-        }
+        }*/
         public void setTitle(string _title)
         {
             if(string.IsNullOrWhiteSpace(_title))
@@ -69,6 +70,6 @@ namespace Projekt.Models
             else
                 this.Content=_content;
         }
-*/
+
     }
 }
