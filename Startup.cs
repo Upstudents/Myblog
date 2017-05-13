@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Projekt.Databases;
+using Microsoft.EntityFrameworkCore;
 
 namespace Projekt
 {
@@ -26,10 +28,13 @@ namespace Projekt
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-            // Add framework services.
-            services.AddMvc();
-        }
+            {
+                // Add framework services.
+                services.AddMvc();
+
+                var connection = @"Server=(localdb)\mssqllocaldb;Database=Projekt.Databases;Trusted_Connection=True;";
+                services.AddDbContext<BloggingContext>(options => options.UseSqlServer(connection));
+            }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

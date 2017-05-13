@@ -14,3 +14,4 @@ C:\Users\Bartosz\OneDrive\Public\Myblog\bin\Debug\netcoreapp1.1\Projekt.pdb
 C:\Users\Bartosz\OneDrive\Public\Myblog\obj\Debug\netcoreapp1.1\Projekt.AssemblyInfo.cs
 C:\Users\Bartosz\OneDrive\Public\Myblog\obj\Debug\netcoreapp1.1\Projekt.dll
 C:\Users\Bartosz\OneDrive\Public\Myblog\obj\Debug\netcoreapp1.1\Projekt.pdb
+C:\Users\Bartosz\OneDrive\Public\Myblog\obj\Debug\netcoreapp1.1\Projekt.csprojResolveAssemblyReference.cache
