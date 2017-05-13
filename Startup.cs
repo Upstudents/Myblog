@@ -32,7 +32,7 @@ namespace Projekt
                 // Add framework services.
                 services.AddMvc();
 
-                var connection = Configuration["Production:SqliteConnectionString"];
+                var connection = Configuration["Production:ConnectionString"];
                  //services.AddDbContext<BloggingContext>(options => options.UseSqlServer("Data Source=blog.db"));
                 services.AddDbContext<BloggingContext>(options => options.UseSqlServer(connection));
                 
