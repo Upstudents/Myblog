@@ -33,7 +33,9 @@ namespace Projekt
                 services.AddMvc();
 
                 var connection = Configuration["Production:SqliteConnectionString"];
-                services.AddDbContext<BloggingContext>(options => options.UseSqlServer(connection));
+                 services.AddDbContext<BloggingContext>(options => options.UseSqlServer("Data Source=blog.db"));
+                //services.AddDbContext<BloggingContext>(options => options.UseSqlServer(connection));
+                
             }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

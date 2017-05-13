@@ -5,11 +5,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Projekt.Models;
 using Projekt.Databases;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 
 namespace Projekt.Controllers
 {
     public class HomeController : Controller
-    {
+    {   
+        private readonly BloggingContext _context;
+        public HomeController(BloggingContext context)
+        {
+            _context=context;
+        }
         public IActionResult Index()
         {
             return View();
@@ -74,13 +81,16 @@ namespace Projekt.Controllers
             if (!ModelState.IsValid) // jezeli wystapil blad, zwracamy aktualna  strone do ktorej przekazujemy obiekt klasy, dzieki temu, uzupelnione przez nas pola nie zostana skasowane - po zaistnialym bledzie
                 return View("AddUser", user);
             else
-            {
-                BloggingContext db = new BloggingContext();
+            {   
+             Encrypter encrypter = new Encrypter();
+                user.Salt = encrypter.GetHash(user.Password,user.Salt=encrypter.GetSalt("1dojutrek"));
+                
+                _context.Add(user);
+                _context.SaveChangesAsync();
                 //db.Users.Add(user);
                 //db.SaveChanges();
-                Encrypter encrypter = new Encrypter();
-                var passwd = encrypter.GetHash(user.Password,user.Salt=encrypter.GetSalt("1dojutrek"));
-                var passwd2 = encrypter.GetHash(user.Password,user.Salt);
+
+                
                 // Kod zapisujący lub wysyłający pytanie do właściciela strony
  
                 return RedirectToAction("UserAdded",user); // jeszeli wszystko jest ok zwracamy widok i przekazujemy do niego obiekt
