@@ -32,7 +32,7 @@ namespace Projekt
                 // Add framework services.
                 services.AddMvc();
 
-                var connection = @"Server=(localdb)\mssqllocaldb;Database=Projekt.Databases;Trusted_Connection=True;";
+                var connection = Configuration["Production:SqliteConnectionString"];
                 services.AddDbContext<BloggingContext>(options => options.UseSqlServer(connection));
             }
 

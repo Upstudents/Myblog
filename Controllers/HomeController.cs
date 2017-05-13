@@ -75,9 +75,9 @@ namespace Projekt.Controllers
                 return View("AddUser", user);
             else
             {
-                BloggingContext db = new BloggingContext(options);
-                db.Users.Add(user);
-                db.SaveChanges();
+                BloggingContext db = new BloggingContext();
+                //db.Users.Add(user);
+                //db.SaveChanges();
                 Encrypter encrypter = new Encrypter();
                 var passwd = encrypter.GetHash(user.Password,user.Salt=encrypter.GetSalt("1dojutrek"));
                 var passwd2 = encrypter.GetHash(user.Password,user.Salt);
