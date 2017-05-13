@@ -33,8 +33,8 @@ namespace Projekt
                 services.AddMvc();
 
                 var connection = Configuration["Production:SqliteConnectionString"];
-                 services.AddDbContext<BloggingContext>(options => options.UseSqlServer("Data Source=blog.db"));
-                //services.AddDbContext<BloggingContext>(options => options.UseSqlServer(connection));
+                 //services.AddDbContext<BloggingContext>(options => options.UseSqlServer("Data Source=blog.db"));
+                services.AddDbContext<BloggingContext>(options => options.UseSqlServer(connection));
                 
             }
 
